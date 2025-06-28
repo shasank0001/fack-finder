@@ -295,10 +295,6 @@ def extract_from_html_structure(soup):
 # More robust approaches to handle X/Twitter's anti-bot measures
 
 def get_twitter_content_selenium(post_url):
-    """
-    Use Selenium to get content (handles JavaScript and anti-bot measures better)
-    Requires: pip install selenium webdriver-manager
-    """
     try:
         from selenium import webdriver
         from selenium.webdriver.common.by import By

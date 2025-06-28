@@ -1,7 +1,7 @@
 from dotenv import load_dotenv
-from uitls.scrape_wed import WebScrapingAgent
+from .scrape_wed import WebScrapingAgent
 from dataclasses import asdict
-from get_urls import NewsSearcher
+from .get_urls import NewsSearcher
 import os
 
 load_dotenv()

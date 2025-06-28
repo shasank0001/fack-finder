@@ -5,6 +5,9 @@ import requests
 import json
 from datetime import datetime
 from typing import List, Dict, Optional
+from dataclasses import asdict
+from .scrape_wed import WebScrapingAgent
+from dotenv import load_dotenv
 import time
 
 load_dotenv()
@@ -151,13 +154,11 @@ class NewsSearcher:
         # Simple caching for demo purposes
         cache_key = f"{query}_{max_results}"
         if cache_key in self._cache:
-            print("Using cached results...")
             return self._cache[cache_key]
         
         all_results = []
         
         # Try News API first (usually most reliable)
-        print("Searching News API...")
         news_results = self.search_news_api(query, max_results // 2)  # Get half from News API
         all_results.extend(news_results)
         
@@ -167,7 +168,6 @@ class NewsSearcher:
         # Try Google Search if we have the key and need more results
         remaining_needed = max_results - len(all_results)
         if remaining_needed > 0 and self.google_api_key and self.google_search_engine_id:
-            print("Searching Google Custom Search...")
             google_results = self.search_google_news(query, remaining_needed)
             all_results.extend(google_results)
         
@@ -210,11 +210,10 @@ def main():
     
     # Check what APIs are available
     available_apis = searcher.get_available_apis()
-    print(f"Available APIs: {available_apis}")
     
     if not available_apis:
-        print("No API keys configured! Add your keys to test.")
         return
+
 def get_info(query):
     NEWS_API_KEY = os.getenv('news_api_key')
     GOOGLE_API_KEY = os.getenv('google_api_key')
@@ -229,16 +228,13 @@ def get_info(query):
 
     # Check what APIs are available
     available_apis = searcher.get_available_apis()
-    print(f"Available APIs: {available_apis}")
 
     if not available_apis:
-        print("No API keys configured! Add your keys to test.")
         return []
 
     # Get news results
     results = searcher.search(query, max_results=15)
     if not results:
-        print("No news results found!")
         return []
 
     # Prepare url-metadata pairs for scraping
