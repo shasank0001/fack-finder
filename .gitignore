@@ -147,8 +147,13 @@ venv.bak/
 detect-fake-imagee/*
 
 # But do NOT ignore these two files
-!detect-fake-imagee/download_model2
-!detect-fake-imagee/main
+!detect-fake-imagee/download_model2.py
+!detect-fake-imagee/main.py
+!detect-fake-imagee/requirements.txt
+
+# Additional virtual environment exclusions
+detect-fake-imagee/venv/
+**/venv/
 # Spyder project settings
 .spyderproject
 .spyproject
