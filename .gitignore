@@ -164,9 +164,15 @@ detect-fake-imagee/*
 .dmypy.json
 dmypy.json
 myenv
-models_cache
-your_cache_directory
-ai-image-detector-model2
+models_cache/
+your_cache_directory/
+ai-image-detector-model2/
+**/models--*/
+.locks/
+*.bin
+*.safetensors
+*.pt
+*.pth
 
 # Pyre type checker
 .pyre/
