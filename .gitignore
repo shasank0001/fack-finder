@@ -214,3 +214,80 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+.pnpm-debug.log*
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+bun.lockb
+.npm
+.eslintcache
+.nyc_output
+coverage/
+*.tgz
+*.tar.gz
+.cache/
+.parcel-cache
+dist/
+build/
+
+# WhatsApp Bot Session Data
+whatsapp-bot/tokens/
+**/tokens/
+**/factstate-session/
+**/Default/Cache/
+**/Default/BudgetDatabase/
+**/Default/IndexedDB/
+**/Default/Local Storage/
+**/Default/Session Storage/
+**/Default/GPUCache/
+**/Default/Code Cache/
+.wwebjs_auth/
+.wwebjs_cache/
+
+# Database files
+*.db
+*.sqlite
+*.sqlite3
+ecommerce_analysis.db
+
+# Cache directories
+**/Cache/
+**/cache/
+**/Cache_Data/
+**/.cache/
+**/__pycache__/
+
+# Log files
+*.log
+logs/
+**/*.log
+
+# Temporary files
+*.tmp
+*.temp
+.DS_Store
+Thumbs.db
+
+# IDE and Editor files
+.vscode/settings.json
+.vscode/launch.json
+.vscode/tasks.json
+*.swp
+*.swo
+*~
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
